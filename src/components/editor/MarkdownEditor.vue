@@ -6,6 +6,7 @@
       :boxShadow="false"
       :toolbars="toolbars"
       :ishljs="true"
+      :subfield="false"
       :autofocus="false"
       @imgAdd="handleAttachmentUpload"
       @save="handleSaveDraft"
