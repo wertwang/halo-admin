@@ -48,7 +48,18 @@ module.exports = {
       }
     }
   },
-
+  devServer: {
+    port: 8080,
+    disableHostCheck: true, // 可使用本地host配置的域名访问
+    proxy: {
+      '/': {
+        // agent: new ProxyAgent('http://127.0.0.1:8090'),
+        target: 'http://127.0.0.1:8090/',
+        ws: false,
+        changeOrigin: true
+      }
+    }
+  },
   lintOnSave: undefined,
   // babel-loader no-ignore node_modules/*
   transpileDependencies: [],
